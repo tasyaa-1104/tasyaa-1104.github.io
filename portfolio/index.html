@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Portfolio</title>
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+body{
+  display:flex;
+  min-height:100vh;
+  background:linear-gradient(135deg,#ffe4ec,#f8bbd0);
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  width:240px;
+  background:#fff;
+  border-right:1px solid #f3c6d3;
+  padding:25px 20px;
+}
+.logo{
+  font-size:22px;
+  font-weight:bold;
+  color:#c2185b;
+  margin-bottom:30px;
+}
+.menu a{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:14px;
+  color:#555;
+  text-decoration:none;
+  border-radius:8px;
+  margin-bottom:8px;
+}
+.menu a.active,
+.menu a:hover{
+  background:linear-gradient(135deg,#f48fb1,#c2185b);
+  color:#fff;
+}
+
+/* ===== MAIN ===== */
+.main{
+  flex:1;
+  padding:25px 40px;
+}
+
+/* ===== HERO CARD ===== */
+.hero{
+  background:linear-gradient(135deg,#f48fb1,#c2185b);
+  border-radius:15px;
+  padding:40px;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+  max-width:900px;
+  margin:40px auto;
+  box-shadow:0 10px 25px rgba(194,24,91,0.25);
+}
+
+.hero-text{
+  max-width:50%;
+}
+
+.hero-text p{
+  font-size:18px;
+  opacity:0.9;
+}
+
+.hero-text h1{
+  font-size:42px;
+  line-height:1.2;
+  margin:10px 0;
+}
+
+.btn-work{
+  display:inline-block;
+  background:#fff;
+  color:#c2185b;
+  padding:12px 25px;
+  border-radius:25px;
+  text-decoration:none;
+  margin-top:15px;
+  font-weight:bold;
+}
+
+/* FOTO */
+.hero-img{
+  background:#f8bbd0;
+  padding:12px;
+  border-radius:15px;
+}
+
+.hero-img img{
+  width:220px;
+  border-radius:10px;
+}
+
+/* FOOTER */
+.footer{
+  margin-top:15px;
+  color:#999;
+  font-size:14px;
+  text-align:center;
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="logo">Portfolio</div>
+  <div class="menu">
+    <a href="index.html" class="active">🏠 Beranda</a>
+    <a href="profile.html">👤 Profil</a>
+    <a href="resume.html">📄 Resume</a>
+    <a href="portfolio.html">💼 Portofolio</a>
+    <a href="contact.html">✉️ Kontak</a>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+  <div class="hero">
+    <div class="hero-text">
+      <p>Hello, I'm</p>
+      <h1>Tasya<br>Nuraeni</h1>
+      <a href="#" class="btn-work">WORK WITH ME</a>
+    </div>
+
+    <div class="hero-img">
+      <img src="img/pp.jpeg" alt="profile">
+    </div>
+  </div>
+
+  <div class="footer">
+    © 2022 Tasya Nuraeni
+  </div>
+
+</div>
+
+</body>
+</html>
