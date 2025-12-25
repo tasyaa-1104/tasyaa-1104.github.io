@@ -22,6 +22,11 @@ body{
   background:#fff;
   border-right:1px solid #f3c6d3;
   padding:25px 20px;
+  position:fixed;
+  top:0;
+  left:0;
+  height:100vh;
+  overflow-y:auto;
 }
 .logo{
   font-size:22px;
@@ -49,6 +54,30 @@ body{
 .main{
   flex:1;
   padding:40px;
+  margin-left:240px;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeUp {
+  from{
+    opacity:0;
+    transform: translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from{
+    opacity:0;
+    transform: scale(0.9);
+  }
+  to{
+    opacity:1;
+    transform: scale(1);
+  }
 }
 
 /* ===== PROFILE SECTION ===== */
@@ -62,9 +91,14 @@ body{
   gap:30px;
   align-items:flex-start;
   box-shadow:0 10px 25px rgba(194,24,91,0.15);
+  animation: fadeUp .8s ease forwards;
 }
 
 /* FOTO */
+.profile-photo{
+  opacity:0;
+  animation: zoomIn .7s ease .3s forwards;
+}
 .profile-photo img{
   width:220px;
   border-radius:15px;
@@ -78,6 +112,8 @@ body{
   border-radius:15px;
   width:260px;
   line-height:1.8;
+  opacity:0;
+  animation: fadeUp .7s ease .45s forwards;
 }
 
 .profile-card h4{
@@ -94,6 +130,8 @@ body{
 /* DESCRIPTION */
 .profile-desc{
   flex:1;
+  opacity:0;
+  animation: fadeUp .7s ease .6s forwards;
 }
 
 .profile-desc h3{
@@ -121,6 +159,11 @@ body{
   padding:12px 30px;
   border-radius:25px;
   text-decoration:none;
+  transition:.2s;
+}
+.btn-cv:hover{
+  transform: translateY(-3px);
+  box-shadow:0 6px 15px rgba(0,0,0,0.25);
 }
 
 /* FOOTER */
@@ -129,6 +172,8 @@ body{
   text-align:center;
   color:#999;
   font-size:14px;
+  opacity:0;
+  animation: fadeUp .8s ease .8s forwards;
 }
 </style>
 </head>

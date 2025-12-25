@@ -52,6 +52,29 @@ body{
   padding:40px;
 }
 
+/* ===== ANIMATION ===== */
+@keyframes fadeUp {
+  from{
+    opacity:0;
+    transform: translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from{
+    opacity:0;
+    transform: scale(0.9);
+  }
+  to{
+    opacity:1;
+    transform: scale(1);
+  }
+}
+
 .card{
   background:#fff;
   border-radius:20px;
@@ -59,6 +82,7 @@ body{
   max-width:1000px;
   margin:0 auto;
   box-shadow:0 10px 25px rgba(194,24,91,0.15);
+  animation: fadeUp .8s ease forwards;
 }
 
 /* HEADER */
@@ -82,6 +106,8 @@ body{
   display:flex;
   align-items:center;
   gap:20px;
+  opacity:0;
+  animation: zoomIn .6s ease forwards;
 }
 
 .icon{
@@ -106,12 +132,22 @@ body{
   text-decoration:none;
 }
 
+/* delay tiap item */
+.item:nth-child(1){ animation-delay:.2s; }
+.item:nth-child(2){ animation-delay:.35s; }
+.item:nth-child(3){ animation-delay:.5s; }
+.item:nth-child(4){ animation-delay:.65s; }
+.item:nth-child(5){ animation-delay:.8s; }
+.item:nth-child(6){ animation-delay:.95s; }
+
 /* FOOTER */
 .footer{
   margin-top:30px;
   text-align:center;
   color:#999;
   font-size:14px;
+  opacity:0;
+  animation: fadeUp .8s ease .6s forwards;
 }
 </style>
 </head>
@@ -148,9 +184,7 @@ body{
         <div class="icon">in</div>
         <div>
           <h4>LinkedIn</h4>
-          <a href="https://www.linkedin.com/" target="_blank">
-            Tasya Nuraeni
-          </a>
+          <a href="https://www.linkedin.com/" target="_blank">TasyaNuraeni</a>
         </div>
       </div>
 
@@ -178,7 +212,7 @@ body{
         <div class="icon">📘</div>
         <div>
           <h4>Facebook</h4>
-          <p>Tasyaa</p>
+          <p>Tasyaaa</p>
         </div>
       </div>
 
@@ -193,7 +227,7 @@ body{
   </div>
 
   <div class="footer">
-    © 2022 Tasya Nuraeni
+    © 2025 Tasya Nuraeni
   </div>
 </div>
 

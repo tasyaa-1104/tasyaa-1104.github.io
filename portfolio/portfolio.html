@@ -23,6 +23,11 @@ body{
   background:#fff;
   border-right:1px solid #f3c6d3;
   padding:25px 20px;
+  position:fixed;
+  top:0;
+  left:0;
+  height:100vh;
+  overflow-y:auto;
 }
 .logo{
   font-size:22px;
@@ -50,6 +55,30 @@ body{
 .main{
   flex:1;
   padding:40px;
+  margin-left:240px;
+}
+
+/* ===== ANIMATION KEYFRAMES ===== */
+@keyframes fadeUp {
+  from{
+    opacity:0;
+    transform: translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from{
+    opacity:0;
+    transform: scale(0.9);
+  }
+  to{
+    opacity:1;
+    transform: scale(1);
+  }
 }
 
 /* CARD */
@@ -60,6 +89,7 @@ body{
   max-width:1000px;
   margin:0 auto;
   box-shadow:0 10px 25px rgba(194,24,91,0.15);
+  animation: fadeUp 0.8s ease forwards;
 }
 
 /* HEADER */
@@ -103,6 +133,8 @@ body{
   text-align:center;
   box-shadow:0 5px 15px rgba(194,24,91,0.15);
   transition:transform .2s;
+  opacity:0;
+  animation: zoomIn 0.6s ease forwards;
 }
 .project:hover{
   transform:translateY(-5px);
@@ -118,12 +150,21 @@ body{
   color:#c2185b;
 }
 
+/* delay animasi tiap project */
+.project:nth-child(1){ animation-delay: .2s; }
+.project:nth-child(2){ animation-delay: .35s; }
+.project:nth-child(3){ animation-delay: .5s; }
+.project:nth-child(4){ animation-delay: .65s; }
+.project:nth-child(5){ animation-delay: .8s; }
+
 /* FOOTER */
 .footer{
   margin-top:30px;
   text-align:center;
   color:#999;
   font-size:14px;
+  animation: fadeUp 0.8s ease .6s forwards;
+  opacity:0;
 }
 </style>
 </head>
@@ -166,6 +207,7 @@ body{
         <img src="img/pws.jpeg" alt="project">
         <p>ui/ux</p>
       </div>
+
       <div class="project" data-category="proto">
         <img src="img/mysql.jpeg" alt="project">
         <p>mysql</p>
@@ -175,12 +217,10 @@ body{
         <img src="img/pw.png" alt="project">
         <p>pwss/pwcs</p>
       </div>
-       <div class="project" data-category="illu">
+
+      <div class="project" data-category="illu">
         <img src="img/yummy.png" alt="project">
         <p>pwss/pwcs</p>
-      </div>
-
-
       </div>
     </div>
   </div>
@@ -206,7 +246,6 @@ filters.forEach(btn => {
 
     projects.forEach(project => {
       const category = project.getAttribute('data-category');
-
       if (filter === 'all' || category === filter) {
         project.style.display = 'block';
       } else {
